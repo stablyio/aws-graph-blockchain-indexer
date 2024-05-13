@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const cdk = require('aws-cdk-lib')
-const { BlockchainNodeStack } = require('../lib/blockchain-node-stack')
+// const { BlockchainNodeStack } = require('../lib/blockchain-node-stack')
 const { TheGraphServiceStack } = require('../lib/the_graph-service-stack')
 const { AwsSolutionsChecks } = require('cdk-nag')
 const { getConfig } = require('../lib/config.js')
