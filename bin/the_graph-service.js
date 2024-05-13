@@ -23,18 +23,19 @@ const {
   awsRegion,
 } = config
 
-const blockchainNodeStack = new BlockchainNodeStack(
-  app,
-  'BlockchainNodeStack',
-  {
-    env: {
-      account: awsAccount,
-      region: awsRegion,
-    },
-    blockchainInstanceType,
-    chainId,
-  }
-)
+// We don't deploy the AWS Ethereum Node
+// const blockchainNodeStack = new BlockchainNodeStack(
+//   app,
+//   'BlockchainNodeStack',
+//   {
+//     env: {
+//       account: awsAccount,
+//       region: awsRegion,
+//     },
+//     blockchainInstanceType,
+//     chainId,
+//   }
+// )
 
 const graphStack = new TheGraphServiceStack(app, 'TheGraphServiceStack', {
   env: {
