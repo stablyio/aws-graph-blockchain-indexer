@@ -13,7 +13,7 @@ const TheGraphService = require('../lib/the_graph-service-stack')
 test('Graph Created', () => {
   const app = new cdk.App()
   // WHEN
-  const stack = new TheGraphService.TheGraphServiceStack(app, 'MyTestStack')
+  const stack = new TheGraphService.GraphNodeServiceStack(app, 'MyTestStack')
   // THEN
   const template = Template.fromStack(stack)
   template.hasResourceProperties('AWS::ApiGatewayV2::Api ', {
