@@ -18,7 +18,6 @@ const {
   chainId,
   apiKey,
   graphInstanceType,
-  blockchainInstanceType,
   awsAccount,
   awsRegion,
 } = config
@@ -37,7 +36,7 @@ const {
 //   }
 // )
 
-const GraphNodeServiceStackName = `GraphNodeServiceStack-${process.env.ENV}`
+const GraphNodeServiceStackName = `graph-node-service-stack-${process.env.ENV}`
 
 const graphStack = new GraphNodeServiceStack(app, GraphNodeServiceStackName, {
   env: {
