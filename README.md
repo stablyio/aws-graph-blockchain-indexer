@@ -124,3 +124,41 @@ Similarly, if you've used the BlockchainNodeStack for the creating an AMB node, 
 ```sh
 $ cdk destroy BlockchainNodeStack
 ```
+
+
+
+# Deploy to AWS dTrinity
+1) Setup your .env 
+CLIENT_URL=https://rpc.soniclabs.com -> Change for the network you want to deploy
+ALLOWED_IP=0.0.0.0
+ALLOWED_SG=
+LOG_LEVEL=info
+CHAIN_ID=146 -> Change for the chain id you want to deploy
+GRAPH_INSTANCE_TYPE=t2.medium
+AWS_ACCOUNT={AWS ACCOUNT}
+AWS_REGION=us-west-2
+ENV=sonic-mainnet
+VPC_ID={VPC ID}
+
+2)  Manually create the database, "graph_node_" + ENV
+
+CREATE DATABASE "graph_node_sonic-mainnet"
+  WITH TEMPLATE template0
+  LC_COLLATE='C'
+  LC_CTYPE='C'
+  ENCODING='UTF8';
+
+3) Modify secrets on Secret manager: graph-node-db-secret-ENV, set the values to the postgres DB
+
+4) Add a new record in Route 53 for the URL of the new graphnode
+  - Create Record
+  - Record Name: graph-node-ENV
+  - Select Use Alias
+  - Route Traffic to Application or Classic Load Balancer
+
+5) Add target group (check existing target group graph-node)
+
+6) Add rule and target group to existing load balancer
+
+
+4) cdk deploy

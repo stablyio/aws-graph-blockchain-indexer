@@ -32,6 +32,7 @@
     "@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName": true,
     "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": true,
     "@aws-cdk/aws-route53-patters:useCertificate": true,
-    "@aws-cdk/customresources:installLatestAwsSdkDefault": false
+    "@aws-cdk/customresources:installLatestAwsSdkDefault": false,
+    "profile": "dtrinity-test"
   }
 }
